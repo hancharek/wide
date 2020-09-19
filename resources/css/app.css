@@ -3,3 +3,11 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+.color-wide {
+  color: #6BB045;
+}
+
+.background-wide {
+  background-color: #6BB045;
+}

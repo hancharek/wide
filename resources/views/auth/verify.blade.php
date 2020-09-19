@@ -8,18 +8,18 @@
             @if (session('resent'))
             <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100  px-3 py-4 mb-4"
                 role="alert">
-                {{ __('A fresh verification link has been sent to your email address.') }}
+                {{ __('Um novo link de verificação foi enviado para seu endereço de e-mail.') }}
             </div>
             @endif
 
             <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
                 <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                    {{ __('Verify Your Email Address') }}
+                    {{ __('Por favor verifique o seu e-mail') }}
                 </header>
 
                 <div class="w-full flex flex-wrap text-gray-700 leading-normal text-sm p-6 space-y-4 sm:text-base sm:space-y-6">
                     <p>
-                        {{ __('Before proceeding, please check your email for a verification link.') }}
+                        {{ __('Antes de continuar, verifique seu e-mail para obter um link de verificação.') }}
                     </p>
 
                     <p>

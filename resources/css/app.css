@@ -24,3 +24,11 @@
 .wide-space {
   margin-left: calc(0rem * calc(1 - var(--space-x-reverse))) !important;
 }
+
+.modal {
+  transition: opacity 0.25s ease;
+}
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}

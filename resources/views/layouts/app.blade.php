@@ -29,6 +29,12 @@
                         @auth
                             <a href="{{ route("projects.index") }}" class="no-underline">
                                 {{ __("Projetos") }}
+                            </a> |
+                            <a href="{{ route("urls.index") }}" class="no-underline">
+                                {{ __("Urls") }}
+                            </a> |
+                            <a href="{{ route("retornos.index") }}" class="no-underline">
+                                {{ __("Retorno Url") }}
                             </a>
                         @endauth
                     </div>

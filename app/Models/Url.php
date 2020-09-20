@@ -12,11 +12,15 @@ class Url extends Model
 {
     use HasFactory;
 
-    protected $table = 'urls';
+    protected $fillable = [
+        'url',
+        'nome_site',
+        'user_id'
+    ];
 
     public function filtros(Request $request)
     {
-        $endereco = $request->has('endereco') ? $request->endereco : false;
+        $endereco = $request->has('url') ? $request->url : false;
         $nome_site = $request->has('nome_site') ? $request->nome_site : false;
 
         $urls = $this
@@ -32,7 +36,7 @@ class Url extends Model
 
     public function store(Request $request)
     {
-        $this->url = $request->endereco;
+        $this->url = $request->url;
         $this->nome_site = $request->nome_site;
         $this->user_id = Auth::user()->id;
 

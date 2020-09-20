@@ -25,3 +25,4 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::resource('projects', ProjectController::class);
 Route::resource('urls', UrlController::class);
 Route::resource('retornos', RetornoController::class);
+Route::post('/urlpesquisa','UrlsController@searchContent')->name('url.pesquisa');

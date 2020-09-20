@@ -16,7 +16,9 @@ class RetornoController extends Controller
     public function index()
     {
         $retornos = Retorno::all();
-        return view('retorno.index')->with(compact('retornos'));
+
+        return view("retornos.index", compact("retornos"));
+    
     }
 
     /**

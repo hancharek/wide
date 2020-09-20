@@ -24,27 +24,36 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
-                <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
-                    @guest
-                        <a class="no-underline" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        @if (Route::has('register'))
-                            <a class="no-underline" href="{{ route('register') }}">{{ __('Cadastrar') }}</a>
-                        @endif
-                    @else
-                        <span>{{ Auth::user()->name }}</span>
+                <nav class="w-full space-x-4 text-gray-300 text-sm sm:text-base px-10">
+                    <div class="w-2/4 float-left inset-y-0.left-8">
+                        @auth
+                            <a href="{{ route("projects.index") }}" class="no-underline">
+                                {{ __("Projetos") }}
+                            </a>
+                        @endauth
+                    </div>
+                    <div class="wide-space w-2/4 inset-y-0.right-0 text-right float-right">
+                        @guest
+                            <a class="no-underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            @if (Route::has('register'))
+                                <a class="no-underline" href="{{ route('register') }}">{{ __('Cadastrar') }}</a>
+                            @endif
+                        @else
+                            <span>{{ Auth::user()->name }}</span>
 
-                        <a href="{{ route('logout') }}"
-                           class="no-underline"
-                           onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                            {{ csrf_field() }}
-                        </form>
-                    @endguest
+                            <a href="{{ route('logout') }}"
+                            class="no-underline"
+                            onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                                {{ csrf_field() }}
+                            </form>   
+                        @endguest
+                    </div>
                 </nav>
-            </div>
+                
         </header>
-
+        
         @yield('content')
     </div>
 </body>

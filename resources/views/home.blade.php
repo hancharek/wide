@@ -17,9 +17,24 @@
             </header>
 
             <div class="w-full p-6">
-                <p class="text-gray-700">
-                    You are logged in!
-                </p>
+                @if (session("success"))
+                    <div class="container mx-auto mt-5">
+                        <div class="bg-teal-100 border-t-4 border-teal-500">
+                            <div class="flex">
+                                <div class="py-1">
+                                    <svg class="fill-current h6 w6-6"></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold">{{ __("Nova mensagem")}}</p>
+                                    <p class="text-sm">{{ session("success") }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                <div class="container mx-auto px-4">
+                    @yield('content')
+                </div>
             </div>
         </section>
     </div>

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\UrlController;
+use App\Http\Controllers\RetornoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +22,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::resource('projects', ProjectController::class);
+Route::resource('urls', UrlController::class);
+Route::resource('retornos', RetornoController::class);

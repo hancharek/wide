@@ -11,3 +11,16 @@
 .background-wide {
   background-color: #6BB045;
 }
+
+.wid-index {
+  z-index: -20;
+}
+
+.sider-bg {
+  background-color: #9921e8;
+  background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%);
+}
+
+.wide-space {
+  margin-left: calc(0rem * calc(1 - var(--space-x-reverse))) !important;
+}
